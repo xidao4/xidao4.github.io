@@ -1,37 +1,240 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>SQL语句 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980select name, population, areafrom Worldwhere area">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL语句">
+<meta property="og:url" content="http://example.com/2021/04/14/SQL/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980select name, population, areafrom Worldwhere area">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-14T03:14:48.000Z">
+<meta property="article:modified_time" content="2021-05-05T14:07:14.776Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-SQL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/14/SQL/" class="article-date">
+  <time class="dt-published" datetime="2021-04-14T03:14:48.000Z" itemprop="datePublished">2021-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      SQL语句
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> name, population, area</span><br><span class="line"><span class="keyword">from</span> World</span><br><span class="line"><span class="keyword">where</span> area<span class="operator">&gt;</span><span class="number">300000</span> <span class="keyword">or</span> population<span class="operator">&gt;</span><span class="number">25000000</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">update salary</span><br><span class="line"><span class="keyword">set</span> sex<span class="operator">=</span><span class="type">CHAR</span>( ASCII(sex)<span class="operator">^</span>ASCII(<span class="string">&#x27;m&#x27;</span>)<span class="operator">^</span>ASCII(<span class="string">&#x27;f&#x27;</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> cinema</span><br><span class="line"><span class="keyword">where</span> id<span class="operator">%</span><span class="number">2</span><span class="operator">=</span><span class="number">1</span> <span class="keyword">and</span> description<span class="operator">!=</span><span class="string">&#x27;boring&#x27;</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> rating <span class="keyword">desc</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> class</span><br><span class="line"><span class="keyword">from</span> courses</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> class</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> student)<span class="operator">&gt;=</span><span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> Email</span><br><span class="line"><span class="keyword">from</span> Person</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> Email</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>)<span class="operator">&gt;=</span><span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> p1</span><br><span class="line"><span class="keyword">from</span> Person p1, Person p2</span><br><span class="line"><span class="keyword">where</span> p1.Email<span class="operator">=</span>p2.Email <span class="keyword">and</span> p1.Id<span class="operator">&gt;</span>p2.Id;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> </span><br><span class="line"><span class="keyword">from</span> person</span><br><span class="line"><span class="keyword">where</span> Id <span class="keyword">not</span> <span class="keyword">in</span>(</span><br><span class="line">	<span class="keyword">select</span> Id</span><br><span class="line">    <span class="keyword">from</span>(</span><br><span class="line">    	<span class="keyword">select</span> <span class="built_in">min</span>(Id) <span class="keyword">as</span> Id</span><br><span class="line">        <span class="keyword">from</span> Person</span><br><span class="line">        <span class="keyword">group</span> <span class="keyword">by</span> Email</span><br><span class="line">    ) <span class="keyword">as</span> m</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> FirstName, LastName, City, State</span><br><span class="line"><span class="keyword">from</span> Person P <span class="keyword">left</span> <span class="keyword">join</span> Address A</span><br><span class="line">	 <span class="keyword">on</span> P.PersonId<span class="operator">=</span>A.PersonId;</span><br><span class="line">	 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> E1.Name <span class="keyword">as</span> Employee</span><br><span class="line"><span class="keyword">from</span> Employee E1 <span class="keyword">left</span> <span class="keyword">join</span> Employee E2</span><br><span class="line">	 <span class="keyword">on</span> E1.ManagerId<span class="operator">=</span>E2.Id <span class="keyword">and</span> E1.salary<span class="operator">&gt;</span>E2.salary;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> C.name <span class="keyword">as</span> Customers</span><br><span class="line"><span class="keyword">from</span> Customers C <span class="keyword">left</span> <span class="keyword">join</span> Orders O</span><br><span class="line">	 <span class="keyword">on</span> C.id<span class="operator">=</span>O.customerId</span><br><span class="line"><span class="keyword">where</span> O.customerId <span class="keyword">is</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> name <span class="keyword">as</span> Customers</span><br><span class="line"><span class="keyword">from</span> Customers</span><br><span class="line"><span class="keyword">where</span> id <span class="keyword">not</span> <span class="keyword">in</span>(</span><br><span class="line">	<span class="keyword">select</span> customerId</span><br><span class="line">    <span class="keyword">from</span> Orders</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  eno</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  works</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">  eno</span><br><span class="line"><span class="keyword">having</span></span><br><span class="line">  <span class="built_in">sum</span>(hours) <span class="operator">&gt;</span> <span class="number">1000</span>;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">select</span> eno</span><br><span class="line"><span class="keyword">from</span> employees</span><br><span class="line"><span class="keyword">where</span> eno <span class="keyword">not</span> <span class="keyword">in</span>(</span><br><span class="line">  <span class="keyword">select</span> eno</span><br><span class="line">  <span class="keyword">from</span> relations</span><br><span class="line">); </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> s.sname</span><br><span class="line"><span class="keyword">from</span> sailors s</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> <span class="keyword">exists</span> (</span><br><span class="line">	<span class="keyword">select</span> b.bid </span><br><span class="line">	<span class="keyword">from</span> boats b </span><br><span class="line">	<span class="keyword">where</span> b.bid <span class="keyword">not</span> <span class="keyword">in</span>(</span><br><span class="line">	  <span class="keyword">select</span> r.bid </span><br><span class="line">	  <span class="keyword">from</span> reserves r </span><br><span class="line">	  <span class="keyword">where</span> r.sid <span class="operator">=</span> s.sid</span><br><span class="line">	)</span><br><span class="line">);</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「happyyouli」的原创文章，遵循CC <span class="number">4.0</span> <span class="keyword">BY</span><span class="operator">-</span>SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https:<span class="operator">/</span><span class="operator">/</span>blog.csdn.net<span class="operator">/</span>happyyouli<span class="operator">/</span>article<span class="operator">/</span>details<span class="operator">/</span><span class="number">105513151</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> group_id, <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> match_num</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">matches</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> group_id;</span><br><span class="line"></span><br><span class="line">编写一个<span class="keyword">sql</span>语句，查询分差最大的一场比赛，若分差相同，选择编号match_id较小的比赛，结果返回比赛编号match_id和分差sub（大于<span class="number">0</span>）。</span><br><span class="line"><span class="keyword">select</span> match_id, <span class="built_in">abs</span>(first_score<span class="operator">-</span>second_score) <span class="keyword">as</span> sub</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">matches</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">abs</span>(first_score<span class="operator">-</span>second_score) <span class="keyword">desc</span>, match_id <span class="keyword">asc</span></span><br><span class="line">limit <span class="number">1</span>;   </span><br><span class="line">#<span class="keyword">order</span> <span class="keyword">by</span>中不能起别名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> order_date, <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> num</span><br><span class="line"><span class="keyword">from</span> orders</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> order_date</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">desc</span>, order_date <span class="keyword">asc</span>   #组间的排序</span><br><span class="line">limit <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">  U.user_id</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  users U,</span><br><span class="line">  orders O,</span><br><span class="line">  items I</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">  U.user_id <span class="operator">=</span> O.buyer_id</span><br><span class="line">  <span class="keyword">and</span> O.item_id <span class="operator">=</span> I.item_id</span><br><span class="line">  <span class="keyword">and</span> U.favorite_brand <span class="operator">=</span> I.item_brand;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    round(ifnull(</span><br><span class="line">    (<span class="keyword">select</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> requester_id, accepter_id) <span class="keyword">from</span> accepted_requests) <span class="operator">/</span></span><br><span class="line">    (<span class="keyword">select</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> sender_id, send_to_id) <span class="keyword">from</span> friend_requests), <span class="number">0</span>), <span class="number">2</span>) <span class="keyword">as</span> accept_rate  </span><br><span class="line">#<span class="keyword">select</span> num <span class="keyword">as</span> accept_rate</span><br><span class="line">#<span class="keyword">distinct</span> requester_id, accepter_id是两个都不同才算不同，否则两个之前都要加<span class="keyword">distinct</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> sender_id <span class="keyword">as</span> user_id</span><br><span class="line"><span class="keyword">from</span> friend_requests</span><br><span class="line"><span class="keyword">where</span> sender_id <span class="keyword">not</span> <span class="keyword">in</span>(</span><br><span class="line">  <span class="keyword">select</span> f.sender_id</span><br><span class="line">  <span class="keyword">from</span> friend_requests f <span class="keyword">inner</span> <span class="keyword">join</span> accepted_requests a</span><br><span class="line">  <span class="keyword">on</span> f.sender_id<span class="operator">=</span>a.requester_id </span><br><span class="line">      <span class="keyword">and</span> f.send_to_id<span class="operator">=</span>a.accepter_id</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> viewer_id <span class="keyword">as</span> id</span><br><span class="line"><span class="keyword">from</span> views</span><br><span class="line"><span class="keyword">where</span> viewer_id<span class="operator">=</span>author_id</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> viewer_id <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> viewer_id</span><br><span class="line"><span class="keyword">from</span> views</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> view_date,viewer_id</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>)<span class="operator">&gt;</span><span class="number">1</span>	#根据条件，按照各组内部的情况，筛选组</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> viewer_id <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> viewer_id, <span class="built_in">count</span>(<span class="keyword">distinct</span> article_id) <span class="keyword">as</span> article_num</span><br><span class="line"><span class="keyword">from</span> views</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> viewer_id</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> article_id) <span class="keyword">desc</span>, viewer_id <span class="keyword">asc</span></span><br><span class="line">limit <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> user_id, <span class="built_in">max</span>(login_date) <span class="keyword">as</span> <span class="type">date</span>  #<span class="built_in">max</span>(login_date)<span class="operator">!</span>不在groupby里面居然也可以<span class="keyword">select</span></span><br><span class="line"><span class="keyword">from</span> logins</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> user_id</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> user_id <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> d.department_name <span class="keyword">as</span> department, <span class="built_in">avg</span>(e.salary) <span class="keyword">as</span> avg_salary</span><br><span class="line"><span class="keyword">from</span> employees e, departments d</span><br><span class="line"><span class="keyword">where</span> d.department_name<span class="operator">=</span><span class="string">&#x27;Technology&#x27;</span> <span class="keyword">and</span> d.department_id<span class="operator">=</span>e.department_id;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">  d.department_name <span class="keyword">as</span> department, (<span class="built_in">max</span>(e.salary)<span class="operator">-</span><span class="built_in">min</span>(e.salary)) <span class="keyword">as</span> sub</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  departments d, employees e</span><br><span class="line"><span class="keyword">where</span> d.department_id<span class="operator">=</span>e.department_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> d.department_name;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> m.title</span><br><span class="line"><span class="keyword">from</span> movies m, movie_rating r</span><br><span class="line"><span class="keyword">where</span> m.movie_id<span class="operator">=</span>r.movie_id</span><br><span class="line">    <span class="keyword">and</span> date_format(r.created_at,<span class="string">&#x27;%Y-%m&#x27;</span>)<span class="operator">=</span><span class="string">&#x27;2020-02&#x27;</span>  #<span class="keyword">Having</span>是筛选组，所以日期处理要写在<span class="keyword">where</span>里</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> r.movie_id</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">avg</span>(r.rating) <span class="keyword">desc</span>,m.title <span class="keyword">asc</span></span><br><span class="line">limit <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">  r.movie_id,m.title,</span><br><span class="line">  <span class="built_in">avg</span>(r.rating) <span class="keyword">as</span> avg_rating,</span><br><span class="line">  <span class="built_in">max</span>(r.rating) <span class="keyword">as</span> max_rating,<span class="built_in">min</span>(r.rating) <span class="keyword">as</span> min_rating</span><br><span class="line"><span class="keyword">from</span> movies m,movie_rating r</span><br><span class="line"><span class="keyword">where</span> m.movie_id<span class="operator">=</span>r.movie_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> r.movie_id;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> u.user_id, u.name, m.title, r.rating</span><br><span class="line"><span class="keyword">from</span> users u, movies m, movie_rating r</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">  u.user_id<span class="operator">=</span><span class="number">1</span></span><br><span class="line">  <span class="keyword">and</span> u.user_id<span class="operator">=</span>r.user_id</span><br><span class="line">  <span class="keyword">and</span> m.movie_id<span class="operator">=</span>r.movie_id;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">select</span> i.invoice_id, i.price, i.user_id, c.customer_name</span><br><span class="line"><span class="keyword">from</span> customers c, invoices i</span><br><span class="line"><span class="keyword">where</span> c.customer_id<span class="operator">=</span>i.user_id</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> i.price <span class="keyword">desc</span></span><br><span class="line">limit <span class="number">1</span>;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> cus.customer_id, cus.customer_name, con.contact_name</span><br><span class="line"><span class="keyword">from</span> customers cus <span class="keyword">inner</span> <span class="keyword">join</span> contacts con</span><br><span class="line"><span class="keyword">on</span> cus.customer_id<span class="operator">=</span>con.user_id;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--1</span></span><br><span class="line"><span class="keyword">select</span> e1.eno,e1.dno,e1.salary</span><br><span class="line"><span class="keyword">from</span> employees e1</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">not</span> <span class="keyword">exists</span>(</span><br><span class="line">  <span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line">  <span class="keyword">from</span> employees e2</span><br><span class="line">  <span class="keyword">where</span> e1.dno<span class="operator">=</span>e2.dno <span class="keyword">and</span> e1.salary<span class="operator">&lt;</span>e2.salary</span><br><span class="line">)</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> dno <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--2.1</span></span><br><span class="line"><span class="keyword">select</span> s.sname</span><br><span class="line"><span class="keyword">from</span> sailors s</span><br><span class="line"><span class="keyword">where</span> s.age<span class="operator">&gt;</span><span class="number">35</span> <span class="keyword">and</span> <span class="keyword">not</span> <span class="keyword">exists</span>(</span><br><span class="line">  <span class="keyword">select</span> <span class="operator">*</span> </span><br><span class="line">  <span class="keyword">from</span> boats b, reserves r</span><br><span class="line">  <span class="keyword">where</span> s.sid<span class="operator">=</span>r.sid <span class="keyword">and</span> b.bid<span class="operator">=</span>r.bid </span><br><span class="line">    <span class="keyword">and</span> b.color<span class="operator">=</span><span class="string">&#x27;RED&#x27;</span> </span><br><span class="line">    <span class="keyword">and</span> r.reserve_date<span class="operator">&gt;=</span><span class="string">&#x27;2020-09-01&#x27;</span> <span class="keyword">and</span> r.reserve_date<span class="operator">&lt;=</span><span class="string">&#x27;2020-09-30&#x27;</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">--2.2</span></span><br><span class="line"><span class="keyword">select</span> sname</span><br><span class="line"><span class="keyword">from</span> sailors </span><br><span class="line"><span class="keyword">where</span> sid <span class="keyword">in</span>(</span><br><span class="line">  <span class="keyword">select</span> r.sid </span><br><span class="line">  <span class="keyword">from</span> boats b,reserves r</span><br><span class="line">  <span class="keyword">where</span> r.bid<span class="operator">=</span>b.bid <span class="keyword">and</span> b.color<span class="operator">=</span><span class="string">&#x27;GREEN&#x27;</span></span><br><span class="line">    <span class="keyword">and</span> r.reserve_date<span class="operator">&gt;=</span><span class="string">&#x27;2020-05-01&#x27;</span> <span class="keyword">and</span> r.reserve_date<span class="operator">&lt;=</span><span class="string">&#x27;2020-05-31&#x27;</span></span><br><span class="line">) </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> rating <span class="keyword">desc</span></span><br><span class="line">limit <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--2.3</span></span><br><span class="line"><span class="keyword">select</span> sname</span><br><span class="line"><span class="keyword">from</span> sailors s</span><br><span class="line"><span class="keyword">where</span> age<span class="operator">&gt;</span><span class="number">35</span> </span><br><span class="line">  <span class="keyword">and</span> <span class="keyword">exists</span>(</span><br><span class="line">    <span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line">    <span class="keyword">from</span> boats b, reserves r</span><br><span class="line">    <span class="keyword">where</span> s.sid<span class="operator">=</span>r.sid</span><br><span class="line">      <span class="keyword">and</span> r.reserve_date<span class="operator">&gt;=</span><span class="string">&#x27;2020-08-01&#x27;</span> <span class="keyword">and</span> r.reserve_date<span class="operator">&lt;=</span><span class="string">&#x27;2020-08-31&#x27;</span></span><br><span class="line">      <span class="keyword">and</span> r.bid<span class="operator">=</span>b.bid</span><br><span class="line">      <span class="keyword">and</span> b.color<span class="operator">=</span><span class="string">&#x27;RED&#x27;</span></span><br><span class="line">  )</span><br><span class="line">  <span class="keyword">and</span> <span class="keyword">exists</span>(</span><br><span class="line">    <span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line">    <span class="keyword">from</span> boats b, reserves r</span><br><span class="line">    <span class="keyword">where</span> s.sid<span class="operator">=</span>r.sid</span><br><span class="line">      <span class="keyword">and</span> r.reserve_date<span class="operator">&gt;=</span><span class="string">&#x27;2020-08-01&#x27;</span> <span class="keyword">and</span> r.reserve_date<span class="operator">&lt;=</span><span class="string">&#x27;2020-08-31&#x27;</span></span><br><span class="line">      <span class="keyword">and</span> r.bid<span class="operator">=</span>b.bid</span><br><span class="line">      <span class="keyword">and</span> b.color<span class="operator">=</span><span class="string">&#x27;GREEN&#x27;</span></span><br><span class="line">  );</span><br><span class="line">  </span><br><span class="line"><span class="comment">--3.1</span></span><br><span class="line"><span class="keyword">select</span> customer_id, <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">as</span> order_num</span><br><span class="line"><span class="keyword">from</span> orders</span><br><span class="line"><span class="keyword">where</span> order_date<span class="operator">&gt;=</span><span class="string">&#x27;2020-08-01&#x27;</span> <span class="keyword">and</span> order_date<span class="operator">&lt;=</span><span class="string">&#x27;2020-08-31&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> customer_id</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">desc</span>, customer_id <span class="keyword">asc</span></span><br><span class="line">limit <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--3.2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--4.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--4.2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--10</span></span><br><span class="line"><span class="keyword">select</span> c.c_id, c.c_name,</span><br><span class="line">  <span class="built_in">max</span>(s.s_score) <span class="keyword">as</span> max_score, <span class="built_in">min</span>(s.s_score) <span class="keyword">as</span> min_score,</span><br><span class="line">  (round(<span class="built_in">count</span>(if(s.s_score<span class="operator">&lt;</span><span class="number">60</span>,<span class="number">1</span>,<span class="keyword">null</span>))<span class="operator">/</span><span class="built_in">count</span>(<span class="operator">*</span>),<span class="number">2</span>)) <span class="keyword">as</span> <span class="string">&#x27;不及格率&#x27;</span>,</span><br><span class="line">  (round(<span class="built_in">count</span>(if(s.s_score<span class="operator">&gt;=</span><span class="number">60</span> <span class="keyword">and</span> s.s_score<span class="operator">&lt;</span><span class="number">90</span>,<span class="number">1</span>,<span class="keyword">null</span>))<span class="operator">/</span><span class="built_in">count</span>(<span class="operator">*</span>),<span class="number">2</span>)) <span class="keyword">as</span> <span class="string">&#x27;中等率&#x27;</span>,</span><br><span class="line">  (round(<span class="built_in">count</span>(if(s.s_score<span class="operator">&gt;=</span><span class="number">90</span>,<span class="number">1</span>,<span class="keyword">null</span>))<span class="operator">/</span><span class="built_in">count</span>(<span class="operator">*</span>),<span class="number">2</span>)) <span class="keyword">as</span> <span class="string">&#x27;优秀率&#x27;</span></span><br><span class="line"><span class="keyword">from</span> scores s, courses c</span><br><span class="line"><span class="keyword">where</span> c.c_id<span class="operator">=</span>s.c_id</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> c.c_id;</span><br></pre></td></tr></table></figure>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/14/SQL/" data-id="ckoc7h58s0002four9izrgr41" data-title="SQL语句" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机基础知识</div>
+    </a>
+  
+</nav>
 
-{% block page_class %}page-post-detail{% endblock %}
+  
+</article>
 
 
-{% block content %}
+</section>
+        
+          <aside id="sidebar">
+  
+    
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
-
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E5%BD%92/" rel="tag">递归</a></li></ul>
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 10px;">递归</a>
+    </div>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/04/14/SQL/">SQL语句</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">计算机基础知识</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/20/JAVA-fby/">JAVA基础知识by fby</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/10/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">二分查找</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/06/BFS%E4%B8%8E%E5%9B%BE/">BFS与图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
